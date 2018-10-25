@@ -122,6 +122,7 @@ img.header__icon {
 .navbar-inverse .navbar-inner {
   border: none;
   background-color: #fff;
+	display: block;
 }
 .navbar-inverse .nav li.dropdown > a:hover .caret,
 .navbar-inverse .nav li.dropdown.open > .dropdown-toggle .caret {
