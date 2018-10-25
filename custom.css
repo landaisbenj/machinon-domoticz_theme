@@ -3,6 +3,9 @@
 /* import css files */
 @import url("css/features.css");
 @import url("css/settings.css");
+@import url("css/offline.css");
+@import url("css/media_phone.css");
+@import url("css/media_tab.css");
 @import url("css/item.css");
 @import url("css/fonts.css");
 @import url("css/icons_on_tabs.css");
@@ -24,9 +27,22 @@
 	/*use with var(--main-blue-color)*/
 	--main-bg-color: #f1f1f1; 
 	--main-blue-color: #0b96cd;
+	--secondary-blue-color: #0bcdc7;
 	--main-item-bg-color: #fff;
 	--main-text-color: #000;
 	--secondary-text-color: gray;
+}
+
+@media (min-width: 768px) {
+  .navbar .brand {
+    left: auto;
+    margin-left: 90px;
+    transform: translateX(0);
+  }
+
+  .span3 {
+    width: 226px;
+  }
 }
 
 
@@ -70,14 +86,14 @@ a:link {
 
 /* Header */
 header.logo {
-  background: #0bcdc7;
-  background: -moz-linear-gradient(left, #0bcdc7 0%, var(--main-blue-color) 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, #0bcdc7), color-stop(100%, var(--main-blue-color)));
-  background: -webkit-linear-gradient(left, #0bcdc7 0%, var(--main-blue-color) 100%);
-  background: -o-linear-gradient(left, #0bcdc7 0%, var(--main-blue-color) 100%);
-  background: -ms-linear-gradient(left, #0bcdc7 0%, var(--main-blue-color) 100%);
-  background: linear-gradient(to right, #0bcdc7 0%, var(--main-blue-color) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#0bcdc7", endColorstr="var(--main-blue-color)", GradientType=1 );
+  background: var(--secondary-blue-color);
+  background: -moz-linear-gradient(left, var(--secondary-blue-color) 0%, var(--main-blue-color) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, var(--secondary-blue-color)), color-stop(100%, var(--main-blue-color)));
+  background: -webkit-linear-gradient(left, var(--secondary-blue-color) 0%, var(--main-blue-color) 100%);
+  background: -o-linear-gradient(left, var(--secondary-blue-color) 0%, var(--main-blue-color) 100%);
+  background: -ms-linear-gradient(left, var(--secondary-blue-color) 0%, var(--main-blue-color) 100%);
+  background: linear-gradient(to right, var(--secondary-blue-color) 0%, var(--main-blue-color) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="var(--secondary-blue-color)", endColorstr="var(--main-blue-color)", GradientType=1 );
 }
 
 .container-logo {
@@ -150,7 +166,7 @@ img.header__icon {
   bottom: 0;
 }
 .navbar .nav > li > .dropdown-menu:after {
-  border-bottom: 6px solid #0bcdc7;
+  border-bottom: 6px solid var(--secondary-blue-color);
 }
 .navbar .nav > li > .dropdown-menu.pull-right li {
   margin-top: 5px;
@@ -160,11 +176,11 @@ img.header__icon {
 }
 .navbar .nav .dropdown-menu {
   border: none;
-  background: #0bcdc7;
+  background: var(--secondary-blue-color);
 }
 .navbar .pull-right > li > .dropdown-menu .dropdown-menu,
 .navbar .nav > li > .dropdown-menu.pull-right .dropdown-menu {
-  background: #0bcdc7 !important;
+  background: var(--secondary-blue-color) !important;
 }
 
 .navbar .nav .current_page_item > a,
@@ -466,24 +482,6 @@ input#AcceptNewHardware:checked ~ button {
   color: #1a1a1a;
 }
 
-#offline {
-  background:linear-gradient(to right, #0bcdc7 0%, #0b97cd 100%) !important;
-  background: -moz-linear-gradient(left, #0bcdc7 0%, var(--main-blue-color) 100%) !important;
-  background: -webkit-gradient(left top, right top, color-stop(0%, #0bcdc7), color-stop(100%, var(--main-blue-color))) !important;
-  background: -webkit-linear-gradient(left, #0bcdc7 0%, var(--main-blue-color) 100%) !important;
-  background: -o-linear-gradient(left, #0bcdc7 0%, var(--main-blue-color) 100%) !important;
-  background: -ms-linear-gradient(left, #0bcdc7 0%, var(--main-blue-color) 100%) !important;
-  background: linear-gradient(to right, #0bcdc7 0%, var(--main-blue-color) 100%) !important;
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#0bcdc7", endColorstr="var(--main-blue-color)", GradientType=1 ) !important;
-}
-
-#offline h3 {
-  color: #fff !important;
-}
-
-#offline h3:after, #offline h3:before,#offline:after, #offline:before  {
-    display:none;
-}
 
 /* =Popus */
 .ui-dialog-buttonset .ui-button-text {
@@ -517,200 +515,11 @@ input#AcceptNewHardware:checked ~ button {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Watermarks */
 /* Media Queries */
-@media screen and (max-width: 992px) {
-
-  div.row{
-    align-content: center;
-    
-  }
-  .container-logo {
-    width: 940px;
-  }
-}
-@media screen and (max-width: 992px) {
-  .container-logo {
-    width: auto;
-  }
-
-  img.header__icon {
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .navbar-inverse .navbar-inner {
-    margin-left: 20px;
-    display: none;
-    padding: 10px;
-    border: 1px solid #fff;
-    border-radius: 6px;
-    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
-    position:absolute;
-    z-index: 1;
-  }
-
-  button.menu-toggle {
-    display: block;
-  }
-
-  .navbar .nav {
-    margin: 0 !important;
-    float: none;
-  }
-  .navbar .nav > li {
-    float: none;
-  }
-  .navbar .nav > li > .dropdown-menu.pull-right li {
-    margin: 0;
-  }
-  .navbar .nav .dropdown-menu {
-    padding: 0;
-    box-shadow: none;
-  }
-  .navbar .nav li a {
-    text-align: left;
-  }
-  .navbar .nav .current_page_item > a {
-    text-align: left;
-  }
-  .navbar .nav li ul li a {
-    padding-left: 30px !important;
-  }
-  .navbar .nav li ul li ul {
-    right: 0 !important;
-    left: 0 !important;
-    top: 245% !important;
-    width: 100% !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-  .navbar .nav li ul li ul li a {
-    padding-left: 50px !important;
-  }
-  .navbar .nav li ul li ul li ul {
-    top: 345% !important;
-    width: 100% !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-  .navbar .nav li ul li ul li ul li a {
-    padding-left: 80px !important;
-  }
-  .navbar .divider-vertical {
-    display: none !important;
-  }
-
-  .hidden-tablet {
-    display: block !important;
-  }
-
-  .navbar-inverse .nav li.dropdown > .dropdown-toggle .caret {
-    margin: 0;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    bottom: 10px;
-  }
-
-  .navbar .pull-right > li > .dropdown-menu, .navbar .nav > li > .dropdown-menu.pull-right {
-    left: 0;
-    width: 100%;
-  }
-
-  .navbar .pull-right > li > .dropdown-menu:after,
-.navbar .nav > li > .dropdown-menu.pull-right:after,
-.navbar .pull-right > li > .dropdown-menu:after,
-.navbar .nav > li > .dropdown-menu.pull-right:before {
-    display: none !important;
-  }
-
-  .navbar .nav .dropdown-menu,
-.navbar .pull-right > li > .dropdown-menu .dropdown-menu,
-.navbar .nav > li > .dropdown-menu.pull-right .dropdown-menu,
-.navbar .pull-right > li > .dropdown-menu .dropdown-menu,
-.navbar .nav > li > .dropdown-menu.pull-right .dropdown-menu {
-    background: white !important;
-    position: relative;
-  }
-
-  .dropdown-submenu > a:after {
-    position: absolute;
-    left: 50%;
-    bottom: 10px;
-    transform: translate(-50%);
-    transform: rotate(90deg);
-    border-left-color: #000;
-    border-width: 4px;
-  }
-
-  .dropdown-submenu:hover > a:after {
-    border-left-color: #000;
-  }
-
-  .navbar-fixed-top {
-    margin-bottom: 20px;
-    position: static !important;
-  }
-
-  .bannercontent {
-    padding-top: 0;
-  }
-}
-@media (max-width: 767px) {
-  body {
-    padding-right: 20px !important;
-    padding-left: 20px !important;
-  }
-}
-@media (min-width: 768px) {
-  .navbar .brand {
-    left: auto;
-    margin-left: 90px;
-    transform: translateX(0);
-  }
-
-  .span3 {
-    width: 226px;
-  }
-}
-@media (min-width: 992px) {
-  .span3 {
-    width: 298px;
-  }
-}
-@media (min-width: 1200px) {
-  .span3 {
-    width: 378px;
-  }
 
 
-  .navbar .divider-vertical {
-    margin: 0 20px;
-  }
-}
+
 
 /* Theme tab in Settings */
 input.parentrequiredchild{
@@ -743,7 +552,7 @@ input.parentunrequiredchild{
 /* MOBILE */
 
 #login:before {
-    background: linear-gradient(to right, #0bcdc7 0%, var(--main-blue-color) 100%);
+    background: linear-gradient(to right, var(--secondary-blue-color) 0%, var(--main-blue-color) 100%);
     text-align: center;
     vertical-align: middle;
     background-size: 100% 60px;
@@ -866,18 +675,4 @@ padding-bottom:1px;
   flex-grow:1;
 }
 
-@media (max-width: 992px) {
-	#settings .row-fluid {
-		flex-wrap: wrap;
-		font-size: 0.9em;
-	}
 
-  /*fix flex bug. need to be improve*/
-  .bannercontent {
-    padding:0 !important;
-    margin:0 !important;
-  }
-  .container-fluid{padding: 0 !important;margin: 0 !important;}
-}
-
-}
