@@ -1,15 +1,58 @@
-@charset "UTF-8";
-/* common features */
-.item table {
-  position: relative;
-  background: #fff;
-  padding: 20px;
-  border-radius: 6px;
-  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
-  display: block;
-  min-height: 100px;
+
+/*unknow*/
+.container .item {
+  padding: 10px 0;
 }
 
+body table#itemtable {
+  width: auto !important;
+}
+body table#itemtabledoubleicon .wrapper {
+  color: orange;
+}
+body table#itemtabledoubleicon tr td:first-child {
+  border: none;
+  background: transparent;
+}
+
+body table#itemtabledoubleicon tbody tr:hover body table#itemtabledoubleicon tr td {
+  background: none;
+}
+#itemtabledoubleicon td:last-child .btnsmall-sel,
+#itemtablenostatus td:last-child .btnsmall-sel,
+#itemtabletrippleicon td:last-child .btnsmall-sel {
+  border-radius: 0;
+  height: auto;
+}
+
+/*tile*/
+.tile:not(item){
+  
+  flex-grow: 1;
+  display:flex;
+}
+.item {
+  position: relative;
+  width: 20em;
+  height: 10em;
+  margin:20px 20px;
+  flex-grow: 1;
+  
+  background: var(--main-item-bg-color);
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+
+}
+
+.item:hover {
+	box-shadow: 0px 0px 0px 2px rgb(11, 150, 205);
+}
+
+.item #type .selectorlevels, .item #type .btn-group{
+  display: flex;
+  width: 65%;
+}
 .item tr {
   display: flex;
   justify-content: center;
@@ -25,6 +68,7 @@ body table#itemtable tbody tr {
 /* name */
 .item #name {
   background-color: transparent !important;
+  color: var(--main-text-color);
 }
 
 @media (min-width: 1200px) {
@@ -34,31 +78,29 @@ body table#itemtable tbody tr {
 }
 /* bigtext */
 .item #bigtext {
-  color: #0b96cd;
-  font-size: 20px;
+  color: var(--main-blue-color);
+  font-size: 17px;
   position: absolute;
-  top: 15px;
-  right: 40px;
+  top: 18px;
+  right: 50px;
 }
 
 @media (min-width: 980px) {
   .item #bigtext {
-    font-size: 27px;
-    top: 10px;
+    font-size: 23px;
   }
 }
-@media (min-width: 1200px) {
-  .item #bigtext {
-    top: 18px;
-    right: 60px;
-  }
-}
+
 /* last update */
 .item #lastupdate {
-  color: gray;
+  color: var(--secondary-text-color);
   position: absolute;
-  right: 10px;
+  right: 60px;
   bottom: 5px;
+}
+dztemperaturewidget .item #lastupdate,
+dzweatherwidget .item #lastupdate {
+  right: 40px;
 }
 .item #lastupdate::before {
   content: "Last Seen: ";
@@ -66,71 +108,15 @@ body table#itemtable tbody tr {
 
 @media (min-width: 1200px) {
   .item #lastupdate {
-    right: 20px;
     bottom: 15px;
   }
 }
 /* type */
 .item #type {
-  color: gray;
-  margin-top: 3px;
+  color: var(--secondary-text-color);
+  margin-top: 5px;
 }
 
-/* item subnav applying by click*/
-.options__bars {
-  display: block;
-  position: absolute;
-  top: 16px;
-  height: 20px;
-  right: 20px;
-  z-index: 2;
-  overflow: hidden;
-  width: 6px;
-}
-.options__bars::before {
-  display: block;
-  color: gray;
-  content: "⠇";
-  font-size: 20px;
-  cursor: pointer;
-}
-
-body table#itemtable tr > .options {
-  display: none;
-  padding: 8px;
-}
-
-.options {
-  position: absolute;
-  background: white;
-  border-radius: 5px;
-  right: 5px;
-  top: 8px;
-  box-shadow: -2px 2px 20px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  display: none;
-  padding: 8px;
-}
-.options .btnsmall-sel {
-  width: auto;
-  background-color: transparent;
-  color: inherit;
-  margin: 0;
-  padding: 0;
-}
-.options .btnsmall {
-  padding: 1px 0;
-}
-
-@media (min-width: 1200px) {
-  .options__bars {
-    top: 25px;
-  }
-
-  .options {
-    top: 16px;
-  }
-}
 /* images */
 .item .img,
 .item #img {
@@ -192,28 +178,81 @@ body table#itemtable tr > .options {
   position: absolute;
   right: 20px;
   bottom: 40px;
+  width: 65%;
+  overflow-x:  auto;
+}
+.ui-selectmenu-button.ui-button{
+  width:auto !important;
+}
+#type .selectorlevels {
+  position: absolute;
+  right: 20px;
+  bottom: 40px;
+  max-width:  250px;
+  overflow-x: auto;
+
+}
+#type .ui-selectmenu-text {
+color:var(--main-blue-color)
+}
+
+/* Time Ago */
+#dashcontent #timeago{
+display:none;
+}
+dztemperaturewidget .item #timeago,
+dzweatherwidget .item #timeago {
+  right: 40px;
+}
+.item #timeago {
+  color: var(--secondary-text-color);
+  font-family: main-font;
+  position: absolute;
+  right: 60px;
+  bottom: 5px;
+}
+@media (min-width: 1200px) {
+  .item #timeago{
+    bottom: 15px;
+  }
+}
+#dashcontent .item #timeago {
+  right:20px;
+  bottom: 15px;
 }
 
 /* dashboard items */
+/*Modifie dans le dashboard, l'espace entre bigtext et le bord droit*/
+#dashcontent .bigtext{
+right:20px;
+}
+/*idem pour le switch*/
+#dashcontent .switch{
+right:20px;
+}
+/*efface le lastupdate du dashboard*/
+#dashcontent .lastupdate{
+display:none;
+}
+#dashcontent .status{
+margin-top:50px;
+margin-left:150px;
+}
+#dashcontent .selectorlevels {
+  position: absolute;
+  right: 20px;
+  bottom: 40px;
+}
+#dashcontent .ui-selectmenu-text {
+color:var(--main-blue-color);
+}
+
 #dashcontent .item #lastupdate {
-  left: 20px;
-  top: 40px;
-  right: auto;
-  bottom: auto;
+  right:20px;
+  bottom: 15px;
 }
 
 /* temperature, weather items */
-dztemperaturewidget .item #name,
-dzweatherwidget .item #name {
-  font-size: 20px;
-}
-dztemperaturewidget .item #bigtext,
-dzweatherwidget .item #bigtext {
-  color: inherit;
-  left: 20px;
-  top: 45px;
-  font-size: 17px;
-}
 dztemperaturewidget #status,
 dzweatherwidget #status {
   position: absolute;
@@ -234,15 +273,6 @@ dzweatherwidget #status > span:empty::before {
 }
 
 /* utility items */
-#utilitycontent .item #name {
-  font-size: 20px;
-}
-#utilitycontent .item #bigtext {
-  color: inherit;
-  left: 20px;
-  top: 45px;
-  font-size: 17px;
-}
 #utilitycontent #type {
   position: absolute;
   right: 20px;
@@ -264,6 +294,8 @@ dzweatherwidget #status > span:empty::before {
   width: 60%;
   text-align: right;
   margin-top: 0;
+  bottom: 40px;
+  overflow-x:  auto;
 }
 #utilitycontent #status::before {
   content: "Status: ";
@@ -300,4 +332,235 @@ dzweatherwidget #status > span:empty::before {
 }
 #scenecontent #status:empty::before, #scenecontent #status > span:empty::before {
   content: "";
+}
+
+#type .dimslider,
+.input .dimslider,
+.statusNormal .dimslider,
+.statusProtected .dimslider {
+  background: rgba(0, 0, 0, 0.26);
+  border: none;
+  box-shadow: none;
+  height: 5px;
+  bottom: 50px;
+  right: 20px;
+  width: 70% !important;
+}
+#type .dimslider .ui-slider-range,
+.input .dimslider .ui-slider-range,
+.statusNormal .dimslider .ui-slider-range,
+.statusProtected .dimslider .ui-slider-range {
+  background: rgba(11, 151, 205, 0.5);
+}
+#type .dimslider .ui-slider-handle,
+.input .dimslider .ui-slider-handle,
+.statusNormal .dimslider .ui-slider-handle,
+.statusProtected .dimslider .ui-slider-handle {
+  width: 15px;
+  height: 15px;
+  background: var(--main-blue-color);
+  border-radius: 50%;
+  top: -5px;
+}
+
+@media (min-width: 1200px) {
+  #type .dimslider, .input .dimslider {
+    width: 55% !important;
+  }
+
+  #itemtabledoubleicon .dimslider,
+#itemtablesmalldoubleicon .dimslider {
+    width: 55% !important;
+  }
+}
+
+/*  Device is timeout  */
+.item.statusTimeout{
+	box-shadow: 0px 0px 10px 2px rgb(199,67,67,0.5);
+	/* background-color: transparent !important; */
+}
+.item.statusTimeout:hover{
+	box-shadow: 0px 0px 0px 2px rgb(199,67,67);
+}
+.item.statusTimeout{
+	/* color: #c74343 !important; */
+	opacity:0.5;
+}
+.item.statusTimeout td#img{
+	opacity:0.2;
+}
+/* Switch is protected */
+.item.statusProtected{
+	box-shadow: 0px 0px 10px 2px rgb(0, 0, 139, 0.4);
+}
+.item.statusProtected:hover{
+	box-shadow: 0px 0px 0px 2px rgb(0, 0, 139);
+}
+.item.statusProtected #name:before{
+	content:'';
+	display: inline-block;
+	width: 20px;
+	height: 16px;
+	background-image: url('../images/deviceProtected.png');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+/* Device has low battery */
+.item.statusLowBattery{
+	box-shadow: 0px 0px 10px 2px rgb(255,255,0,0.4);
+}
+.item.statusLowBattery:hover{
+	box-shadow: 0px 0px 0px 2px rgb(255,255,0);
+}
+.item.statusLowBattery #name:before{
+	content:'';
+	display: inline-block;
+	width: 25px;
+	height: 20px;
+	background-image: url('../images/lowbattery.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	animation: blinker 2s linear infinite;
+}
+
+
+
+
+
+
+
+
+
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+
+@media screen and (max-width: 992px) {
+
+.item {
+  min-width: 20em;
+  margin-right:0 !important;
+  }
+}
+@media (min-width: 1200px) {
+  #itemtablenostatus #type,
+#itemtabletrippleicon #type {
+    height: auto;
+  }
+}
+
+
+table.mobileitem{
+    width: 100%;
+    padding: 0;
+    margin-top:20px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+table.mobileitem > thead{
+    display: flex;
+}
+table.mobileitem > thead > tr {
+    display:flex;
+	background: none;
+}
+table.mobileitem > thead > tr > th:first-of-type{
+    flex-grow:1;
+}
+
+table.mobileitem .status > span > span{margin-right:7px;}
+
+.mobileitem th{
+    display:inline;
+    background-color: transparent;
+    text-shadow: none;
+}
+.mobileitem tr{
+    margin: 0!important;
+    padding: 0!important;
+    box-sizing: border-box;
+    height: auto;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.mobileitem td{
+    height: auto!important;
+    margin-right: 0!important;
+    /*word-break: break-word;*/
+    /*margin: 0!important;*/
+    background-image: none!important;
+    display: inline-flex;
+    width: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+    align-items: center; 
+    padding:5px!important;
+    min-height:35px;
+}
+.mobileitem td > div {margin: 0!important;}
+
+.mobileitem td:last-child{
+    flex-wrap:wrap;
+}
+.mobileitem td label{
+    white-space: nowrap;
+    height:50%;
+}
+body.dashMobile table.mobileitem td#name,
+body.dashMobile table.mobileitem td.name{
+    font-size: 100%;
+    position: inherit;
+    padding:0 0 0 10px!important;
+    height:auto;
+    min-height:30px;
+}
+body.dashMobile table.mobileitem td#name img,
+body.dashMobile table.mobileitem td.name img{
+    margin-right:5px;
+}
+.mobileitem .btn-mini{
+    margin-left: 2px;
+}
+#dashcontent .mobileitem .dimslider{
+  background: rgba(0, 0, 0, 0.26);
+  border: none;
+  box-shadow: none;
+  height: 5px;
+}
+#dashcontent .mobileitem .dimslider .ui-slider-range{
+  background: rgba(11, 151, 205, 0.5);
+}
+#dashcontent .mobileitem .dimslider .ui-slider-handle{
+  width: 15px;
+  height: 15px;
+  background: var(--main-blue-color);
+  border-radius: 50%;
+  top: -6px;
+}
+#dashcontent .mobileitem td#status,
+#dashcontent .mobileitem td.status{
+    display: flex;
+    position:initial;
+    flex-direction: row;
+    white-space: normal;
+    width: auto;
+    max-width:60%;
+    justify-content: flex-end;
+    padding: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin: 0;
+    text-align: end;
+}
+#dashcontent .mobileitem .selectorlevels {
+  position: relative;
+  right: 0px;
+  bottom: 0px;
 }

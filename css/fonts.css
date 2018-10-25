@@ -1,0 +1,42 @@
+/* Add fonts */
+@font-face {
+    font-family: main-font;
+    src: url(font/OpenSans-Regular.ttf);
+}
+@font-face {
+    font-family: main-font-bold;
+    src: url(font/OpenSans-SemiBold.ttf);
+}
+
+.btnstylerev,
+.btnstyle,
+.btnstyle3-dis,
+.btnstyle3,
+.btnstyle3-sel
+.mHeaderBtn,
+.navbar-inverse .navbar-inner,
+.item #bigtext,
+.item #type,
+.item #lastupdate {
+  font-family: main-font;
+}
+h2,
+#tophtm,
+#temptophtm,
+#weathertophtm,
+#lightcontent td,
+#utilitycontent td,
+.beforebannav,
+.machinoText,
+.mHeader,
+.item #status,
+.item #name {
+  font-family: main-font-bold;
+}
+#tabs,
+.span6,
+.span6,
+.span12,
+.page-header-small h1 {
+	font-family: main-font-bold;
+}
