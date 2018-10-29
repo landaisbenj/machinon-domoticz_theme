@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+/* import css files */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url("css/fonts.css");
+
+/*var in way of change color*/
+:root {
+	/*use with var(--main-blue-color)*/
+	--main-bg-color: #f1f1f1; 
+	--main-blue-color: #0b96cd;
+	--secondary-blue-color: #0bcdc7;
+	--main-item-bg-color: #fff;
+	--main-text-color: #000;
+	--secondary-text-color: gray;
+}
+
+/* Hide domoticz features */
+#holder #copyright,
+.navbar .brand img,
+.navbar .brand h1,
+.navbar .brand h2,
+.navbar .brand hidden-phone{
+  display: none;
+}
+
+/*/////////////////////////////////  body section   //////////////////////////////*/
+body {
+  background:var(--main-bg-color) !important;
+  color: #1a1a1a;
+}
