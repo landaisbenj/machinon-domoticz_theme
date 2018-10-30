@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 	
-var targetedNode = holder[0]
+var targetedNode = holder[0];
 
 	   // Create an observer instance linked to the callback function
     var observer = new MutationObserver(function(mutationsList, observer) {
