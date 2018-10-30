@@ -7,11 +7,11 @@ $( document ).ready(function() {
             if (item.type === 'childList'){
 
                 if (item.addedNodes.length > 0){
-                    alert('new div is being added!');
+                    console.log('new div is being added! ' + item );
                 }
 
                 if (item.removedNodes.length > 0){
-                    alert('div has been removed'); 
+                    console.log('div has been removed ' + item ); 
                 }
 
             }
