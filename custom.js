@@ -19,7 +19,7 @@ $( document ).ready(function() {
     });
 
     // Start observing the target node for configured mutations
-    observer.observe( holder[0], { 
+    observer.observe( document, { 
         attributes: true, 
         childList: true, 
         subtree: true 
