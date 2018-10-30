@@ -1,6 +1,5 @@
 $( document ).ready(function() {
-	
-var targetedNode = holder[0];
+
 
 	   // Create an observer instance linked to the callback function
     var observer = new MutationObserver(function(mutationsList, observer) {
@@ -20,7 +19,7 @@ var targetedNode = holder[0];
     });
 
     // Start observing the target node for configured mutations
-    observer.observe(targetedNode, { 
+    observer.observe( holder[0], { 
         attributes: true, 
         childList: true, 
         subtree: true 
